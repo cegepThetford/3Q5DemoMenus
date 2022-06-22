@@ -1,0 +1,20 @@
+﻿<Window x:Class="DemoCommandes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoCommandes"
+        mc:Ignorable="d"
+        Title="Demo3" Height="250" Width="300">
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="Quitter_Executed"
+                        CanExecute="Quitter_CanExecute"/>
+    </Window.CommandBindings>-->
+    <StackPanel>
+        <CheckBox Name="chkPermission" Content="Permission de quitter?"/>
+        <Button Content="Quitter" 
+                Command="{Binding QuitterCommande}"
+                CommandParameter="{Binding ElementName=chkPermission}"/>
+    </StackPanel>
+</Window>

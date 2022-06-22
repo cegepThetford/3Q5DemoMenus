@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Demo2c" Height="250" Width="400">
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="_Edition">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Police">
+                <MenuItem Name="mniGras" 
+                          Header="_Gras" 
+                          Command="EditingCommands.ToggleBold"
+                          InputGestureText="Ctrl-B"
+                          IsCheckable="True"/>
+                <MenuItem Name="mniItalique" 
+                          Header="_Italic"
+                          Command="EditingCommands.ToggleItalic"
+                          InputGestureText="Ctrl-I"
+                          IsCheckable="True"/>
+                <Separator/>
+                <MenuItem Header="_Augmenter la taille"
+                          Click="AugmenterTaille_Click"/>
+                <MenuItem Header="_Diminuer lataille"
+                          Click="DiminuerTaille_Click"/>
+            </MenuItem>
+        </Menu>
+        <RichTextBox Name="rtbMessage" Margin="2" SelectionChanged="rtbMessage_SelectionChanged">
+            <FlowDocument>
+                <Paragraph>
+                    Portez ce vieux whisky au <Bold>juge</Bold> blond qui fume
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </StackPanel>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="DemoMenus_UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoMenus_UI"
+        mc:Ignorable="d"
+        Title="Demo" SizeToContent="Height" Width="300">
+    <Window.CommandBindings>
+        <CommandBinding Command="EditingCommands.ToggleBold" Executed="{x:Null}"/>
+    </Window.CommandBindings>
+    <StackPanel>
+        <!--<Menu>
+            <MenuItem Header="_Fichier">
+                <MenuItem Header="_Nouveau" 
+                          Click="TraiterNouveauFichier_Click" 
+                          InputGestureText="Ctrl+N"/>
+                <MenuItem Header="_Ouvrir"
+                          InputGestureText="Ctrl+O"/>
+                <MenuItem Header="En_registrer sous..."
+                          InputGestureText="F12"/>
+                <Separator/>
+                <MenuItem Header="Fic_hiers récents...">
+                    <MenuItem Header="Premier.cs"/>
+                    <MenuItem Header="Second.cs"/>
+                </MenuItem>
+                <MenuItem Header="_Quitter"/>
+            </MenuItem>
+        </Menu>-->
+        <!--<Button Content="Basculer Gras" Command="EditingCommands.ToggleBold" CommandTarget="{Binding ElementName=tbMessage}"/>-->
+        <Menu>
+            <MenuItem Command="ApplicationCommands.Paste"
+                      CommandTarget="{Binding ElementName=tbMessage}" />
+        </Menu>
+        <Button Content="Coller"
+                Command="ApplicationCommands.Paste"
+                CommandTarget="{Binding ElementName=tbMessage}"/>
+        <ToggleButton Content="Basculer Gras"
+                Command="EditingCommands.ToggleBold"
+                CommandTarget="{Binding ElementName=rtbDocument}"/>
+        <TextBox Text="Adam Bernard"/>
+        <TextBox Name="tbMessage"/>
+        <RichTextBox Name="rtbDocument" Height="100"/>
+    </StackPanel>
+</Window>
